@@ -47,7 +47,7 @@ int minut = 100;   //minute de réveil saisie
 int chifre1 = 0;   //premier chiffre saisie minute réveil
 int chifre2 = 0;   //second  chiffre saisie minute réveil
 
-int nbrtouche = 0; //compteur de touchx à la saisie du réveil
+int nbrtouche = 0; //compteur de touche à la saisie du réveil
 
 int accueil = 0;   //permet de réaficher le MENU principal
 int alarm = 0;     // 1 2 3 4 selon parametre ou langue ou reveil etc 1 = set alarm     2 = parametre
@@ -60,7 +60,7 @@ int langue = 0;    //0=anglais et 1=français
 
 int delayy = 0;    //delai entre la coupure et le ré allumage du buzzer
 int repet = 0;     //repetition du reveil   1=réveil activer 0 = désactiver
-int notif = 0;     //evite le spam affichage R
+int notif = 0;     //évite le spam affichage R
 
 int veil = 1;      //1=chrono en cours et 0= en veille
 int infra = 0;     //non fonctionnel 
@@ -81,8 +81,8 @@ void setup() {
   SPI.begin();
   Serial.begin(9600);
   irrecv.enableIRIn();
-  irsend.begin(9600); //----normalement pas de valeur mais compile avec une valeur dedans
-//irrecv.blink13(true);
+  //irsend.begin();
+  //irrecv.blink13(true);
   lcd.init();
   lcd.backlight();
   if (! rtc.begin()){
