@@ -663,21 +663,21 @@ void loop() {
       alarm = 0;
       delay(100);
     }
-    if(reveil==1 && nbrtouche==1){  //-------------accueil retour arriere saisie reveil
+    if(reveil==1 && nbrtouche==1){  //-------------retour arriere saisie reveil
         lcd.setCursor(8,0);
         lcd.print(" ");
         lcd.setCursor(8,0);
         nbrtouche=0;
         delay(300);
     }
-     if(reveil==1 && nbrtouche==2){ //-------------accueil retour arriere saisie reveil
+     if(reveil==1 && nbrtouche==2){ //-------------retour arriere saisie reveil
         lcd.setCursor(9,0);
         lcd.print(" ");
         lcd.setCursor(9,0);
         nbrtouche=1;
         delay(150);
     }
-    if(reveil==2 && nbrtouche==0){ //-------------accueil retour arriere saisie reveil
+    if(reveil==2 && nbrtouche==0){ //-------------retour arriere saisie reveil
        lcd.setCursor(9,0);
        lcd.print(" ");
        lcd.setCursor(9,0);
@@ -685,7 +685,7 @@ void loop() {
        reveil = 1;
        delay(150);
     }
-     if(reveil==2 && nbrtouche==1){ //-------------accueil retour arriere saisie reveil
+     if(reveil==2 && nbrtouche==1){ //-------------retour arriere saisie reveil
         lcd.setCursor(8,1);
         lcd.print(" ");
         lcd.setCursor(9,0);
@@ -695,7 +695,7 @@ void loop() {
         reveil=1;
         delay(150);
     }
-     if(reveil==10 && nbrtouche==2){   //-------------accueil retour arriere saisie reveil
+     if(reveil==10 && nbrtouche==2){   //-------------retour arriere saisie reveil
         lcd.setCursor(9,1);
         lcd.print(" ");
         lcd.setCursor(9,1);
@@ -710,7 +710,6 @@ void loop() {
       lcd.backlight();
     }
     if (sonerie == 1){
-      //anciennement repet=0
       sonerie = 0;
       reveil = 0;
       accueil = 0;
@@ -907,7 +906,7 @@ void loop() {
         lcd.print("  2:Francais        ");
       }
       reveil = 4;
-      alarm = 54; //-------peu importe juste eviter sacade
+      alarm = 42; //-------peu importe juste eviter sacade
       nbrtouche = 0;
     }
 
@@ -1035,7 +1034,7 @@ void loop() {
     vb=0;
   }
   
-  if(eminut<30 && reveil==0 && repet ==1 && now.hour()==heure && now.minute()<eminut){   //---a verifier eminut <30 veut dire que l'heure de  reil voulu est entre minute = 30 et 59
+  if(eminut<30 && reveil==0 && repet ==1 && now.hour()==heure && now.minute()<eminut){   //---a verifier eminut <30 veut dire que l'heure de réveil voulu est entre minute = 30 et 59
     vr=255;
     vg=255;
     vb=0; 
@@ -1046,7 +1045,7 @@ void loop() {
     vb=0;
   }
 
-  if(reveil==0 && repet ==1 && now.hour()==heure && now.minute()<=minut && now.minute()>=eminut){    //marche pas si reveil = 15h00 et time = 14h59 pas meme heur donc pas rouge
+  if(reveil==0 && repet ==1 && now.hour()==heure && now.minute()<=minut && now.minute()>=eminut){    //marche pas si reveil = 15h00 et time = 14h59 pas meme heure donc pas rouge
     vr=255;
     vg=0;
     vb=0;
