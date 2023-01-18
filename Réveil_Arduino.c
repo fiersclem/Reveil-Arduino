@@ -55,7 +55,7 @@ int alarm = 0;     // 1 2 3 4 selon parametre ou langue ou reveil etc 1 = set al
 int sonerie = 0;   //allumage reveil 0=éteint / 1=allumé
 int buzzer = 4;    //pin buzzer
 
-int push = 0;      //eviter les spam touche je pense je sais plus
+int push = 0;      //eviter les spam
 int langue = 0;    //0=anglais et 1=français
 
 int delayy = 0;    //delai entre la coupure et le ré allumage du buzzer
