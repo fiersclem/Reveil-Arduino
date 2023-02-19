@@ -205,7 +205,7 @@ void loop() {
       digitalWrite(g,vg);
       digitalWrite(b,vb);
     }
-    Serial.print(appui);  //!!!IMPORTANT NE PAS ENLEVER!!!
+    Serial.println(appui);  //!!!IMPORTANT NE PAS ENLEVER!!!
    }
 
   if(digitalRead(colone1)){
@@ -844,6 +844,7 @@ void loop() {
       heure = (chiffre1 * 10) + (chiffre2);
       minut = (chifre1 * 10) + (chifre2);
       eminut = minut-30;
+      eheure=heure;
       if(eminut <0){
         eminut=60+eminut;
         eheure = heure-1;
@@ -1043,19 +1044,19 @@ void loop() {
     vb=0;
   }*/      //temporaire
   
-  if(reveil==0 && repet==1 && now.hour()==heure && now.minute()<25){   //---a verifier eminut <30 veut dire que l'heure de  reil voulu est entre minute = 30 et 59
+  if(reveil==0 && repet==1 && now.hour()==eheure && now.minute()<eminut){   //---a verifier eminut <30 veut dire que l'heure de  reil voulu est entre minute = 30 et 59
     vr=255;
     vg=255;
     vb=0; 
   }
 
-  if(reveil==0 && repet==1 && now.hour()==heure && now.minute()>25){    //marche pas si reveil = 15h00 et time = 14h59 pas meme heure donc pas rouge
+  if(reveil==0 && repet==1 && now.hour()==eheure && now.minute()>eminut){    //marche pas si reveil = 15h00 et time = 14h59 pas meme heure donc pas rouge
     vr=255;
     vg=0;
     vb=0;
   }
 
-  if(reveil==0 && repet==1 && now.hour()!=heure){
+  if(reveil==0 && repet==1 && now.hour()!=eheure){
     vr=0;
     vg=255;
     vb=0;
